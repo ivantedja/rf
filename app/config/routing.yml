@@ -1,0 +1,3 @@
+rf_calculator:
+    resource: "@RfCalculatorBundle/Resources/config/routing.yml"
+    prefix:   /

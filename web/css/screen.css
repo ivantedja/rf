@@ -1,0 +1,17 @@
+#header h1 {
+    color: #DF0101;
+    text-align: center;
+}
+
+#wrapper a {
+    text-decoration: none;
+    color: #F48A00;
+}
+
+#footer {
+    border-top: 1px solid #ccc;
+    clear: both;
+    text-align: center;
+    padding: 10px;
+    color: #aaa;
+}

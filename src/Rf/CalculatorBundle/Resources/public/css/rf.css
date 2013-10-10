@@ -1,0 +1,146 @@
+/** layout */
+.top_left {
+    width: 30%;
+    float: left;
+}
+.top_center {
+    width: 30%;
+    float: left;
+}
+.top_right {
+    width: 30%;
+    float: left;
+}
+
+.top_container {
+    width: 100%;
+    display: block;
+    clear: both;
+}
+
+.bottom_container {
+    width: 100%;
+    display: block;
+    clear: both;
+    padding: 10px;
+}
+
+/** calculator */
+.item_image {
+    width: 66px;
+    height: 66px;
+}
+
+.upgrade_container {
+    overflow: hidden;
+    display: inline-block;
+}
+
+.hidden_input {
+    position: absolute;
+    left: 0;
+    top: -50px;
+    visibility: hidden;
+}
+
+
+.upgrade_container:hover .upgrade_label:hover,
+.upgrade_container:hover .upgrade_label:hover ~ .upgrade_label,
+.upgrade_input:checked ~ .upgrade_label {
+    background-position: 0 0;
+}
+
+.upgrade_container:hover .upgrade_label, .upgrade_label {
+    width: 14px;
+    height: 20px;
+    background: url(../images/upgrade/igno.png) 0 -20px no-repeat;
+    display: block;
+    float: right;
+}
+
+/** buff */
+.buff {
+    margin: 0 10px;
+    width: 66px;
+    height: 66px;
+    display: inline-block;
+}
+
+.wild_rage {
+    background: url(../images/buff/wild_rage.png) 0 0 no-repeat;
+}
+
+.magnetic_arm {
+    background: url(../images/buff/magnetic_arm.png) 0 0 no-repeat;
+}
+
+.siege_mastery {
+    background: url(../images/buff/siege_mastery.png) 0 0 no-repeat;
+}
+
+.od20 {
+    background: url(../images/buff/od20.png) 0 0 no-repeat;
+}
+
+.od40 {
+    background: url(../images/buff/od40.png) 0 0 no-repeat;
+}
+
+.od55 {
+    background: url(../images/buff/od55.png) 0 0 no-repeat;
+}
+
+.od70 {
+    background: url(../images/buff/od70.png) 0 0 no-repeat;
+}
+
+/** siege kit */
+.red_siege {
+    background: url(../images/siege/red_siege.png) 0 0 no-repeat;
+}
+
+.blue_siege {
+    background: url(../images/siege/blue_siege.png) 0 0 no-repeat;
+}
+
+.black_siege {
+    background: url(../images/siege/black_siege.png) 0 0 no-repeat;
+}
+
+/** amulet */
+.amu_beast {
+    background: url(../images/elemental/amu_beast.png) 0 0 no-repeat;
+}
+
+.amu_oc {
+    background: url(../images/elemental/amu_oc.png) 0 0 no-repeat;
+}
+
+.amu_sk {
+    background: url(../images/elemental/amu_sk.png) 0 0 no-repeat;
+}
+
+.amu_starved {
+    background: url(../images/elemental/amu_starved.png) 0 0 no-repeat;
+}
+
+.amu_vio {
+    background: url(../images/elemental/amu_vio.png) 0 0 no-repeat;
+}
+
+.amu25 {
+    background: url(../images/elemental/amu25.png) 0 0 no-repeat;
+}
+
+.amu20 {
+    background: url(../images/elemental/amu20.png) 0 0 no-repeat;
+}
+
+/** cincin */
+.ring25 {
+    background: url(../images/elemental/ring25.png) 0 0 no-repeat;
+}
+
+.ring20 {
+    background: url(../images/elemental/ring20.png) 0 0 no-repeat;
+}

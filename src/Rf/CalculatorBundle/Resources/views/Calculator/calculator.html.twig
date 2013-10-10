@@ -1,0 +1,236 @@
+{% extends 'RfCalculatorBundle::layout.html.twig' %}
+
+{% block top_left %}
+    <div class="amu_container_l">
+        <input type='checkbox' class='amu_input hidden_input' id='amu_beast_l' name='amu[amu_beast_l]' value='28'/>
+        <label for='amu_beast_l'  class='amu_beast buff' title="fluctuating beast vital's Earring"></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu_oc_l' name='buff[amu_oc_l]' value='28'/>
+        <label for='amu_oc_l'  class='amu_oc buff' title="Outcasted marauder's Earring"></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu_sk_l' name='buff[amu_sk_l]' value='30'/>
+        <label for='amu_sk_l'  class='amu_sk buff' title="Stormknife Claw's Necklace"></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu_starved_l' name='buff[amu_starved_l]' value='28'/>
+        <label for='amu_starved_l'  class='amu_starved buff' title="Starved Beast's Earring"></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu_vio_l' name='buff[amu_vio_l]' value='28'/>
+        <label for='amu_vio_l'  class='amu_vio buff' title="violent wild's Earring"></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu25_l' name='buff[amu25_l]' value='25'/>
+        <label for='amu25_l'  class='amu25 buff' title='Elemental Hue Headset'></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu20_l' name='buff[amu20_l]' value='20'/>
+        <label for='amu20_l'  class='amu20 buff' title='Elemental Pliant Headset'></label>
+    </div>
+    <div class="amu_container_r">
+        <input type='checkbox' class='amu_input hidden_input' id='amu_beast_r' name='amu[amu_beast_r]' value='28'/>
+        <label for='amu_beast_r'  class='amu_beast buff' title="fluctuating beast vital's Earring"></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu_oc_r' name='buff[amu_oc_r]' value='28'/>
+        <label for='amu_oc_r'  class='amu_oc buff' title="Outcasted marauder's Earring"></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu_sk_r' name='buff[amu_sk_r]' value='30'/>
+        <label for='amu_sk_r'  class='amu_sk buff' title="Stormknife Claw's Necklace"></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu_starved_r' name='buff[amu_starved_r]' value='28'/>
+        <label for='amu_starved_r'  class='amu_starved buff' title="Starved Beast's Earring"></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu_vio_r' name='buff[amu_vio_r]' value='28'/>
+        <label for='amu_vio_r'  class='amu_vio buff' title="violent wild's Earring"></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu25_r' name='buff[amu25_r]' value='25'/>
+        <label for='amu25_r'  class='amu25 buff' title='Elemental Hue Headset'></label>
+
+        <input type='checkbox' class='amu_input hidden_input' id='amu20_r' name='buff[amu20_r]' value='20'/>
+        <label for='amu20_r'  class='amu20 buff' title='Elemental Pliant Headset'></label>
+    </div>
+    <div class="ring_container_l">
+        <input type='checkbox' class='ring_input hidden_input' id='ring25_l' name='buff[ring25_l]' value='25'/>
+        <label for='ring25_l'  class='ring25 buff' title='Elemental Hue Bracers'></label>
+
+        <input type='checkbox' class='ring_input hidden_input' id='ring20_l' name='buff[ring20_l]' value='20'/>
+        <label for='ring20_l'  class='ring20 buff' title='Elemental Pliant Bracers'></label>
+    </div>
+    <div class="ring_container_r">
+        <input type='checkbox' class='ring_input hidden_input' id='ring25_r' name='buff[ring25_r]' value='25'/>
+        <label for='ring25_r'  class='ring25 buff' title='Elemental Hue Bracers'></label>
+
+        <input type='checkbox' class='ring_input hidden_input' id='ring20_r' name='buff[ring20_r]' value='20'/>
+        <label for='ring20_r'  class='ring20 buff' title='Elemental Pliant Bracers'></label>
+    </div>
+{% endblock %}
+
+{% block top_center %}
+    <div class='rf_main'>
+
+        <div class='result_container'>
+            <span>
+                <img src='{{ asset('bundles/rfcalculator/images/none.png') }}' id='result_image'/>
+            </span>
+            <div>Item Name : <span id='result_name'>-</span></div>
+            <div id='result_weapon_container'>Damage : <span id='result_atk_min'>1</span> - <span id='result_atk_max'>1</span></div>
+            <div id='result_buff_container'>Buff : <span id='result_buff'>0</span>%</div>
+        </div>
+        
+        <div class='upgrade_container'>
+            {% set percentages = {7 : 200, 6 : 135, 5: 80, 4 : 50, 3 : 25, 2: 13, 1 : 5} %}
+            {% for i, percent in percentages %}
+                <input type='radio' class='upgrade_input hidden_input' id='upgrade{{ i }}' name='upgrade' value='{{ percent }}'/>
+                <label for='upgrade{{ i }}'  class='upgrade_label'></label>
+            {% endfor %}
+        </div>
+
+        <div>
+            <span class='reset'>reset</span>
+        </div>
+    </div>
+    <input type='hidden' id='weapon_min' name='weapon[min]' value='1'/>
+    <input type='hidden' id='weapon_max' name='weapon[max]' value='1'/>
+{% endblock %}
+
+{% block top_right %}
+    <div class="launcher">
+        <span class='weapon' data-min='1265' data-max='2714' data-name='Hora Akeron'>
+            <img class='weapon_image' class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/hora_akeron.png') }}' alt='Hora Akeron' title='Hora Akeron'/>
+        </span>
+        <span class='weapon' data-min='1671' data-max='3556' data-name='Intense Hora Akeron'>
+            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/hora_akeron.png') }}' alt='Intense Hora Akeron' title='Intense Hora Akeron'/>
+        </span>
+        <span class='weapon' data-min='1638' data-max='3563' data-name='Dark Flame Launcher'>
+            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/dfl.png') }}' alt='Dark Flame Launcher' title='Dark Flame Launcher'/>
+        </span>
+        <span class='weapon' data-min='2036' data-max='4408' data-name='Intense Dark Flame Launcher'>
+            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/dfl.png') }}' alt='Intense Dark Flame Launcher' title='Intense Dark Flame Launcher'/>
+        </span>
+        <span class='weapon' data-min='2113' data-max='4667' data-name='Divine Frame Launcher'>
+            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/dfl.png') }}' alt='Divine Frame Launcher' title='Divine Frame Launcher'/>
+        </span>
+        <span class='weapon' data-min='2482' data-max='5465' data-name='Divine Frame Launcher [Rare B]'>
+            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/dfl.png') }}' alt='Divine Frame Launcher [Rare B]' title='Divine Frame Launcher [Rare B]'/>
+        </span>
+    </div>
+    <div class="lance">
+        <span class='weapon' data-min='1484' data-max='2280' data-name='Hora Spear'>
+            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/hora_spear.png') }}' alt='Hora Spear' title='Hora Spear'/>
+        </span>
+        <span class='weapon' data-min='1960' data-max='2980' data-name='Intense Hora Spear'>
+            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/hora_spear.png') }}' alt='Intense Hora Spear' title='Intense Hora Spear'/>
+        </span>
+        <span class='weapon' data-min='1960' data-max='2980' data-name='Black Lance'>
+            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/black_lance.png') }}' alt='Black Lance' title='Black Lance'/>
+        </span>
+        <span class='weapon' data-min='2036' data-max='4408' data-name='Intense Black Lance'>
+            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/black_lance.png') }}' alt='Intense Black Lance' title='Intense Black Lance'/>
+        </span>
+        <span class='weapon' data-min='2587' data-max='3874' data-name='Divine Lance'>
+            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/black_lance.png') }}' alt='Divine Lance' title='Divine Lance'/>
+        </span>
+    </div>
+{% endblock %}
+
+{% block bottom_container %}
+    <div class="buff_container">
+        <input type='checkbox' class='buff_input hidden_input' id='wild_rage' name='buff[wild_rage]' value='30'/>
+        <label for='wild_rage'  class='wild_rage buff' title='Wild Rage'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='magnetic_arm' name='buff[magnetic_arm]' value='30'/>
+        <label for='magnetic_arm'  class='magnetic_arm buff' title='Magnetic Arm'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='siege_mastery' name='buff[siege_mastery]' value='30'/>
+        <label for='siege_mastery'  class='siege_mastery buff' title='Siege Mastery'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='od20' name='buff[od20]' value='20'/>
+        <label for='od20'  class='od20 buff' title='Advanced Over Drive Charger'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='od40' name='buff[od40]' value='40'/>
+        <label for='od40'  class='od40 buff' title='Offense Charger'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='od55' name='buff[od55]' value='55'/>
+        <label for='od55'  class='od55 buff' title='Offense Charger [Premium]'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='od70' name='buff[od70]' value='70'/>
+        <label for='od70'  class='od70 buff' title='Roast Sweet Potato'></label>
+    </div>
+    <div class="siege_container">
+        <input type='checkbox' class='buff_input hidden_input' id='red_siege_1' name='buff[red_siege_1]' value='40'/>
+        <label for='red_siege_1'  class='red_siege buff' title='Attack Ephocal Siege Kit'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='red_siege_2' name='buff[red_siege_2]' value='10'/>
+        <label for='red_siege_2'  class='red_siege buff' title='Defense Ephocal Siege Kit'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='blue_siege' name='buff[blue_siege]' value='60'/>
+        <label for='blue_siege'  class='blue_siege buff' title='Sniper Lecas Siege Kit'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='black_siege_1' name='buff[black_siege_1]' value='45'/>
+        <label for='black_siege_1'  class='black_siege buff' title='Shining Siege Kit'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='black_siege_2' name='buff[black_siege_2]' value='40'/>
+        <label for='black_siege_2'  class='black_siege buff' title='Advanced Shining Siege Kit'></label>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type='text/javascript'>
+        var trigger = function() {
+            $.ajax({
+                type: 'get',
+                url: '/calculate',
+                data: $('form').serialize(),
+                success: function(json) {
+                    $('#result_atk_min').text(json.totalMin);
+                    $('#result_atk_max').text(json.totalMax);
+                    $('#result_buff').text(json.buff);
+                }
+            });
+        };
+        var resetInfo = function() {
+            $('#weapon_min').val(1);
+            $('#weapon_max').val(1);
+            $('#result_name').text('-');
+            $('#result_image').attr('src', "{{ asset('bundles/rfcalculator/images/none.png') }}");
+            $('#buff').val(0);
+            $('#result_buff').text('0');
+            $('.upgrade_input').filter(':checked').prop('checked', false);
+            $('.buff_input').filter(':checked').prop('checked', false);
+        }
+        $('.weapon').on('click', function() {
+            $('#weapon_min').val($(this).data('min'));
+            $('#weapon_max').val($(this).data('max'));
+            $('#result_name').text($(this).data('name'));
+            $('#result_image').attr('src', $(this).find('img').attr('src'));
+            trigger();
+        });
+        $('.upgrade_input').on('click', function() {
+            trigger();
+        });
+        $('.reset').on('click', function() {
+            resetInfo();
+            trigger();
+        });
+        $('.buff_input').on('change', function() {
+            trigger();
+        });
+        $('.amu_input').on('change', function() {
+            trigger();
+        });
+        $('.ring_input').on('change', function() {
+            trigger();
+        });
+        $(function() {
+            $( document ).tooltip({
+                content: function() {
+                    var result = '<div>' + $(this).attr('title') + '</div>';
+                    if ($(this).hasClass('buff')) {
+                        result += '<div>Damage: ' + $(this).prev().val() + '%</div>';
+                    }
+                    else if ($(this).hasClass('weapon_image')) {
+                        result += '<div>Damage: ' + $(this).parent().data('min') + ' - ' + $(this).parent().data('max') + '</div>';
+                    }
+                    return result;
+                }
+            });
+        });
+    </script>
+{% endblock %}

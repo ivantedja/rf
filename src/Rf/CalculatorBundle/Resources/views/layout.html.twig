@@ -1,0 +1,39 @@
+{# src/Blogger/BlogBundle/Resources/views/layout.html.twig #}
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/rfcalculator/css/rf.css') }}" type="text/css" rel="stylesheet" />
+    <link href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+    <form>
+        <div class='top_container'>
+            {% block top_container %}
+                <div class='top_left'>
+                    {% block top_left %}
+                    {% endblock %}
+                </div>
+                <div class='top_center'>
+                    {% block top_center %}
+                    {% endblock %}
+                </div>
+                <div class='top_right'>
+                    {% block top_right %}
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </div>
+        <div class='bottom_container'>
+            {% block bottom_container %}
+            {% endblock %}
+        </div>
+    </form>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+{% endblock %}

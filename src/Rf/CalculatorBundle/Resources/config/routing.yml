@@ -1,5 +1,5 @@
 _calculator:
-    path:  /calculator
+    path:  /
     defaults: { _controller: RfCalculatorBundle:Calculator:index }
 
 _calculate:

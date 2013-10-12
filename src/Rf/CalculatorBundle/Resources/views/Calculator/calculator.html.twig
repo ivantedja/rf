@@ -85,50 +85,46 @@
             <span class='reset'>reset</span>
         </div>
     </div>
-    <input type='hidden' id='weapon_min' name='weapon[min]' value='1'/>
-    <input type='hidden' id='weapon_max' name='weapon[max]' value='1'/>
 {% endblock %}
 
 {% block top_right %}
     <div class="launcher">
-        <span class='weapon' data-min='1265' data-max='2714' data-name='Hora Akeron'>
-            <img class='weapon_image' class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/hora_akeron.png') }}' alt='Hora Akeron' title='Hora Akeron'/>
-        </span>
-        <span class='weapon' data-min='1671' data-max='3556' data-name='Intense Hora Akeron'>
-            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/hora_akeron.png') }}' alt='Intense Hora Akeron' title='Intense Hora Akeron'/>
-        </span>
-        <span class='weapon' data-min='1638' data-max='3563' data-name='Dark Flame Launcher'>
-            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/dfl.png') }}' alt='Dark Flame Launcher' title='Dark Flame Launcher'/>
-        </span>
-        <span class='weapon' data-min='2036' data-max='4408' data-name='Intense Dark Flame Launcher'>
-            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/dfl.png') }}' alt='Intense Dark Flame Launcher' title='Intense Dark Flame Launcher'/>
-        </span>
-        <span class='weapon' data-min='2113' data-max='4667' data-name='Divine Frame Launcher'>
-            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/dfl.png') }}' alt='Divine Frame Launcher' title='Divine Frame Launcher'/>
-        </span>
-        <span class='weapon' data-min='2482' data-max='5465' data-name='Divine Frame Launcher [Rare B]'>
-            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/dfl.png') }}' alt='Divine Frame Launcher [Rare B]' title='Divine Frame Launcher [Rare B]'/>
-        </span>
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='hora_akeron' data-name='Hora Akeron' value='1265-2714'/>
+        <label for='hora_akeron'  class='hora_akeron weapon' title='Hora Akeron'></label>
+
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='hora_akeron_b' data-name='Intense Hora Akeron' value='1671-3556'/>
+        <label for='hora_akeron_b'  class='hora_akeron weapon' title='Intense Hora Akeron'></label>
+
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='dfl' data-name='Dark Flame Launcher' value='1638-3563'/>
+        <label for='dfl'  class='dfl weapon' title='Dark Flame Launcher'></label>
+
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='dfl_b' data-name='Intense Dark Flame Launcher' value='2036-4408'/>
+        <label for='dfl_b'  class='dfl weapon' title='Intense Dark Flame Launcher'></label>
+
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='div_fl' data-name='Divine Frame Launcher' value='2113-4667'/>
+        <label for='div_fl'  class='dfl weapon' title='Divine Frame Launcher'></label>
+
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='div_fl_b' data-name='Divine Frame Launcher [Rare B]' value='2482-5465'/>
+        <label for='div_fl_b'  class='dfl weapon' title='Divine Frame Launcher [Rare B]'></label>
     </div>
     <div class="lance">
-        <span class='weapon' data-min='1484' data-max='2280' data-name='Hora Spear'>
-            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/hora_spear.png') }}' alt='Hora Spear' title='Hora Spear'/>
-        </span>
-        <span class='weapon' data-min='1960' data-max='2980' data-name='Intense Hora Spear'>
-            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/hora_spear.png') }}' alt='Intense Hora Spear' title='Intense Hora Spear'/>
-        </span>
-        <span class='weapon' data-min='1960' data-max='2980' data-name='Black Lance'>
-            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/black_lance.png') }}' alt='Black Lance' title='Black Lance'/>
-        </span>
-        <span class='weapon' data-min='2036' data-max='4408' data-name='Intense Black Lance'>
-            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/black_lance.png') }}' alt='Intense Black Lance' title='Intense Black Lance'/>
-        </span>
-        <span class='weapon' data-min='2587' data-max='3874' data-name='Divine Lance'>
-            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/black_lance.png') }}' alt='Divine Lance' title='Divine Lance'/>
-        </span>
-        <span class='weapon' data-min='2036' data-max='4408' data-name='Divine Lance [Rare B]'>
-            <img class='weapon_image' src='{{ asset('bundles/rfcalculator/images/weapon/black_lance.png') }}' alt='Divine Lance' title='Divine Lance [Rare B]'/>
-        </span>
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='hora_spear' data-name='Hora Spear' value='1484-2280'/>
+        <label for='hora_spear'  class='hora_spear weapon' title='Hora Spear'></label>
+
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='hora_spear_b' data-name='Intense Hora Spear' value='1960-2980'/>
+        <label for='hora_spear_b'  class='hora_spear weapon' title='Intense Hora Spear'></label>
+
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='black_lance' data-name='Black Lance' value='1960-2980'/>
+        <label for='black_lance'  class='black_lance weapon' title='Black Lance'></label>
+
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='black_lance_b' data-name='Intense Black Lance' value='2036-4408'/>
+        <label for='black_lance_b'  class='black_lance weapon' title='Intense Black Lance'></label>
+
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='divine_lance' data-name='Divine Lance' value='2587-3874'/>
+        <label for='divine_lance'  class='black_lance weapon' title='Divine Lance'></label>
+
+        <input type='radio' class='weapon_input hidden_input' name='weapon' id='divine_lance_b' data-name='Divine Lance [Rare B]' value='2036-4408'/>
+        <label for='divine_lance_b'  class='black_lance weapon' title='Divine Lance [Rare B]'></label>
     </div>
 {% endblock %}
 
@@ -189,27 +185,20 @@
             });
         };
         var resetInfo = function() {
-            $('#weapon_min').val(1);
-            $('#weapon_max').val(1);
             $('#result_name').text('-');
             $('#result_image').attr('src', "{{ asset('bundles/rfcalculator/images/none.png') }}");
             $('#buff').val(0);
             $('#result_buff').text('0');
+            $('.weapon_input').filter(':checked').prop('checked', false);
             $('.upgrade_input').filter(':checked').prop('checked', false);
             $('.buff_input').filter(':checked').prop('checked', false);
         }
-        $('.weapon').on('click', function() {
-            $('#weapon_min').val($(this).data('min'));
-            $('#weapon_max').val($(this).data('max'));
+        $('.weapon_input').on('change', function() {
             $('#result_name').text($(this).data('name'));
             $('#result_image').attr('src', $(this).find('img').attr('src'));
             trigger();
         });
-        $('.upgrade_input').on('click', function() {
-            trigger();
-        });
-        $('.reset').on('click', function() {
-            resetInfo();
+        $('.upgrade_input').on('change', function() {
             trigger();
         });
         $('.buff_input').on('change', function() {
@@ -221,6 +210,10 @@
         $('.ring_input').on('change', function() {
             trigger();
         });
+        $('.reset').on('click', function() {
+            resetInfo();
+            trigger();
+        });
         $(function() {
             $( document ).tooltip({
                 content: function() {
@@ -228,8 +221,8 @@
                     if ($(this).hasClass('buff')) {
                         result += '<div>Damage: ' + $(this).prev().val() + '%</div>';
                     }
-                    else if ($(this).hasClass('weapon_image')) {
-                        result += '<div>Damage: ' + $(this).parent().data('min') + ' - ' + $(this).parent().data('max') + '</div>';
+                    else if ($(this).hasClass('weapon')) {
+                        result += '<div>Damage: ' + $(this).prev().val() + '</div>';
                     }
                     return result;
                 }

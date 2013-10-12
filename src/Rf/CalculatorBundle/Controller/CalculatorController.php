@@ -18,6 +18,11 @@ class CalculatorController extends Controller
         $query = $request->query;
 
         $weapon = $query->get('weapon');
+        if(!isset($weapon) || empty($weapon)) {
+            /** initialize weapon value */
+            $weapon = '1-1';
+        }
+        list($weaponMin, $weaponMax) = explode('-', $weapon);
 
         $upgrade = (int)$query->get('upgrade') / 100;
 
@@ -29,8 +34,8 @@ class CalculatorController extends Controller
             $totalBuff += $v;
         }
 
-        $totalMin = $weapon['min'] + floor($weapon['min'] * $upgrade) + floor($weapon['min'] * $totalBuff / 100);
-        $totalMax = $weapon['max'] + floor($weapon['max'] * $upgrade) + floor($weapon['max'] * $totalBuff / 100);
+        $totalMin = $weaponMin + floor($weaponMin * $upgrade) + floor($weaponMin * $totalBuff / 100);
+        $totalMax = $weaponMax + floor($weaponMax * $upgrade) + floor($weaponMax * $totalBuff / 100);
 
         $return = array('totalMin' => $totalMin, 'totalMax' => $totalMax, 'buff' => $totalBuff);
         return new Response(json_encode($return), 200 , array('Content-Type'=>'application/json'));

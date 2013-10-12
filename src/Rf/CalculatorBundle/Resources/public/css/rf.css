@@ -59,7 +59,7 @@
 }
 
 /** buff */
-.buff {
+.buff, .weapon {
     margin: 0 10px;
     width: 66px;
     height: 66px;
@@ -143,4 +143,21 @@
 
 .ring20 {
     background: url(../images/elemental/ring20.png) 0 0 no-repeat;
+}
+
+/** weapon */
+.hora_akeron {
+    background: url(../images/weapon/hora_akeron.png) 0 0 no-repeat;
+}
+
+.dfl {
+    background: url(../images/weapon/dfl.png) 0 0 no-repeat;
+}
+
+.hora_spear {
+    background: url(../images/weapon/hora_spear.png) 0 0 no-repeat;
+}
+
+.black_lance {
+    background: url(../images/weapon/black_lance.png) 0 0 no-repeat;
 }

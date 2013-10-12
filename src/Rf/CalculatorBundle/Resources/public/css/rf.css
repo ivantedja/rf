@@ -58,8 +58,13 @@
     float: right;
 }
 
+/** none */
+.none {
+    background: url(../images/none.png) 0 0 no-repeat;
+}
+
 /** buff */
-.buff, .weapon {
+.buff, .weapon, .amu, .ring, .none{
     margin: 0 10px;
     width: 66px;
     height: 66px;

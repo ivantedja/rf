@@ -2,67 +2,40 @@
 
 {% block top_left %}
 
-    <input type='checkbox' class='amu_input hidden_input' id='amu_beast_l' name='buff[amu_beast_l]' value='28'/>
-    <input type='checkbox' class='amu_input hidden_input' id='amu_beast_r' name='buff[amu_beast_r]' value='28'/>
-
-    <input type='checkbox' class='amu_input hidden_input' id='amu_oc_l' name='buff[amu_oc_l]' value='28'/>
-    <input type='checkbox' class='amu_input hidden_input' id='amu_oc_r' name='buff[amu_oc_r]' value='28'/>
-
-    <input type='checkbox' class='amu_input hidden_input' id='amu_sk_l' name='buff[amu_sk_l]' value='30'/>
-    <input type='checkbox' class='amu_input hidden_input' id='amu_sk_r' name='buff[amu_sk_r]' value='30'/>
-
-    <input type='checkbox' class='amu_input hidden_input' id='amu_starved_l' name='buff[amu_starved_l]' value='28'/>
-    <input type='checkbox' class='amu_input hidden_input' id='amu_starved_r' name='buff[amu_starved_r]' value='28'/>
-
-    <input type='checkbox' class='amu_input hidden_input' id='amu_vio_l' name='buff[amu_vio_l]' value='28'/>
-    <input type='checkbox' class='amu_input hidden_input' id='amu_vio_r' name='buff[amu_vio_r]' value='28'/>
-
-    <input type='checkbox' class='amu_input hidden_input' id='amu25_l' name='buff[amu25_l]' value='25'/>
-    <input type='checkbox' class='amu_input hidden_input' id='amu25_r' name='buff[amu25_r]' value='25'/>
-
-    <input type='checkbox' class='amu_input hidden_input' id='amu20_l' name='buff[amu20_l]' value='20'/>
-    <input type='checkbox' class='amu_input hidden_input' id='amu20_r' name='buff[amu20_r]' value='20'/>
-
     <div id="amu_container" title="Amulet List">
-        <span id='amu_beast_l-label' class='amu_beast amu' title="fluctuating beast vital's Earring" data-icon="amu_beast"></span>
-        <span id='amu_beast_r-label' class='amu_beast amu' title="fluctuating beast vital's Earring" data-icon="amu_beast"></span>
+        <span id='amu_beast_l-label' class='amu_beast amu' title="fluctuating beast vital's Earring" data-name="fluctuating beast vital's Earring" data-icon="amu_beast" data-value='28'></span>
+        <span id='amu_beast_r-label' class='amu_beast amu' title="fluctuating beast vital's Earring" data-name="fluctuating beast vital's Earring" data-icon="amu_beast" data-value='28'></span>
 
-        <span id='amu_oc_l-label' class='amu_oc amu' title="Outcasted marauder's Earring" data-icon="amu_oc"></span>
-        <span id='amu_oc_r-label' class='amu_oc amu' title="Outcasted marauder's Earring" data-icon="amu_oc"></span>
+        <span id='amu_oc_l-label' class='amu_oc amu' title="Outcasted marauder's Earring" data-name="Outcasted marauder's Earring" data-icon="amu_oc" data-value='28'></span>
+        <span id='amu_oc_r-label' class='amu_oc amu' title="Outcasted marauder's Earring" data-name="Outcasted marauder's Earring" data-icon="amu_oc" data-value='28'></span>
 
-        <span id='amu_sk_l-label' class='amu_sk amu' title="Stormknife Claw's Necklace" data-icon="amu_sk"></span>
-        <span id='amu_sk_r-label' class='amu_sk amu' title="Stormknife Claw's Necklace" data-icon="amu_sk"></span>
+        <span id='amu_sk_l-label' class='amu_sk amu' title="Stormknife Claw's Necklace" data-name="Stormknife Claw's Necklace" data-icon="amu_sk" data-value='30'></span>
+        <span id='amu_sk_r-label' class='amu_sk amu' title="Stormknife Claw's Necklace" data-name="Stormknife Claw's Necklace" data-icon="amu_sk" data-value='30'></span>
 
-        <span id='amu_starved_l-label' class='amu_starved amu' title="Starved Beast's Earring" data-icon="amu_starved"></span>
-        <span id='amu_starved_r-label' class='amu_starved amu' title="Starved Beast's Earring" data-icon="amu_starved"></span>
+        <span id='amu_starved_l-label' class='amu_starved amu' title="Starved Beast's Earring" data-name="Starved Beast's Earring" data-icon="amu_starved" data-value='28'></span>
+        <span id='amu_starved_r-label' class='amu_starved amu' title="Starved Beast's Earring" data-name="Starved Beast's Earring" data-icon="amu_starved" data-value='28'></span>
 
-        <span id='amu_vio_l-label' class='amu_vio amu' title="violent wild's Earring" data-icon="amu_vio"></span>
-        <span id='amu_vio_r-label' class='amu_vio amu' title="violent wild's Earring" data-icon="amu_vio"></span>
+        <span id='amu_vio_l-label' class='amu_vio amu' title="violent wild's Earring" data-name="violent wild's Earring" data-icon="amu_vio" data-value='28'></span>
+        <span id='amu_vio_r-label' class='amu_vio amu' title="violent wild's Earring" data-name="violent wild's Earring" data-icon="amu_vio" data-value='28'></span>
 
-        <span id='amu25_l-label' class='amu25 amu' title='Elemental Hue Headset' data-icon="amu25"></span>
-        <span id='amu25_r-label' class='amu25 amu' title='Elemental Hue Headset' data-icon="amu25"></span>
+        <span id='amu25_l-label' class='amu25 amu' title='Elemental Hue Headset' data-name='Elemental Hue Headset' data-icon="amu25" data-value='25'></span>
+        <span id='amu25_r-label' class='amu25 amu' title='Elemental Hue Headset' data-name='Elemental Hue Headset' data-icon="amu25" data-value='25'></span>
 
-        <span id='amu20_l-label' class='amu20 amu' title='Elemental Pliant Headset' data-icon="amu20"></span>
-        <span id='amu20_r-label' class='amu20 amu' title='Elemental Pliant Headset' data-icon="amu20"></span>
+        <span id='amu20_l-label' class='amu20 amu' title='Elemental Pliant Headset' data-name='Elemental Pliant Headset' data-icon="amu20" data-value='20'></span>
+        <span id='amu20_r-label' class='amu20 amu' title='Elemental Pliant Headset' data-name='Elemental Pliant Headset' data-icon="amu20" data-value='20'></span>
     </div>
-
-    <button id="show_amu" type="button">Amulet List</button>
-
-    <input type='checkbox' class='ring_input hidden_input' id='ring20_l' name='buff[ring20_l]' value='20'/>
-    <input type='checkbox' class='ring_input hidden_input' id='ring20_r' name='buff[ring20_r]' value='20'/>
-
-    <input type='checkbox' class='ring_input hidden_input' id='ring25_l' name='buff[ring25_l]' value='25'/>
-    <input type='checkbox' class='ring_input hidden_input' id='ring25_r' name='buff[ring25_r]' value='25'/>
 
     <div id="ring_container" title="Ring List">
-        <span id='ring20_l-label'  class='ring20 ring' title='Elemental Pliant Bracers' data-icon="ring20"></span>
-        <span id='ring20_r-label'  class='ring20 ring' title='Elemental Pliant Bracers' data-icon="ring20"></span>
+        <span id='ring20_l-label'  class='ring20 ring' title='Elemental Pliant Bracers' data-name='Elemental Pliant Bracers' data-icon="ring20" data-value='20'></span>
+        <span id='ring20_r-label'  class='ring20 ring' title='Elemental Pliant Bracers' data-name='Elemental Pliant Bracers' data-icon="ring20" data-value='20'></span>
 
-        <span id='ring25_l-label'  class='ring25 ring' title='Elemental Hue Bracers' data-icon="ring25"></span>
-        <span id='ring25_r-label'  class='ring25 ring' title='Elemental Hue Bracers' data-icon="ring25"></span>
+        <span id='ring25_l-label'  class='ring25 ring' title='Elemental Hue Bracers' data-name='Elemental Hue Bracers' data-icon="ring25" data-value='25'></span>
+        <span id='ring25_r-label'  class='ring25 ring' title='Elemental Hue Bracers' data-name='Elemental Hue Bracers' data-icon="ring25" data-value='25'></span>
     </div>
 
-    <button id="show_ring" type="button">Ring List</button>
+    <div id="amu_input_container" class="container"></div>
+    <div id="ring_input_container" class="container"></div>
+
 {% endblock %}
 
 {% block top_center %}
@@ -100,44 +73,35 @@
 {% endblock %}
 
 {% block top_right %}
-    <div class="launcher">
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='hora_akeron' data-name='Hora Akeron' value='1265-2714' data-icon='hora_akeron'/>
-        <label for='hora_akeron'  class='hora_akeron weapon' title='Hora Akeron'></label>
+    <div id="weapon_container" title="Weapon List">
+        <div class="launcher">
+            <label for='hora_akeron' id='hora_akeron-label' class='hora_akeron weapon' title='Hora Akeron' data-value='1265-2714' data-name='Hora Akeron' data-icon='hora_akeron'></label>
 
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='hora_akeron_b' data-name='Intense Hora Akeron' value='1671-3556' data-icon='hora_akeron'/>
-        <label for='hora_akeron_b'  class='hora_akeron weapon' title='Intense Hora Akeron'></label>
+            <label for='hora_akeron_b' id='hora_akeron_b-label' class='hora_akeron weapon' title='Intense Hora Akeron' data-value='1671-3556' data-name='Intense Hora Akeron' data-icon='hora_akeron'></label>
 
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='dfl' data-name='Dark Flame Launcher' value='1638-3563' data-icon='dfl'/>
-        <label for='dfl'  class='dfl weapon' title='Dark Flame Launcher'></label>
+            <label for='dfl' id='dfl-label' class='dfl weapon' title='Dark Flame Launcher' data-value='1638-3563' data-name='Dark Flame Launcher' data-icon='dfl'></label>
 
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='dfl_b' data-name='Intense Dark Flame Launcher' value='2036-4408' data-icon='dfl'/>
-        <label for='dfl_b'  class='dfl weapon' title='Intense Dark Flame Launcher'></label>
+            <label for='dfl_b' id="dfl_b-label" class='dfl weapon' title='Intense Dark Flame Launcher' data-value='2036-4408' data-name='Intense Dark Flame Launcher' data-icon='dfl'></label>
 
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='div_fl' data-name='Divine Frame Launcher' value='2113-4667' data-icon='dfl'/>
-        <label for='div_fl'  class='dfl weapon' title='Divine Frame Launcher'></label>
+            <label for='div_fl' id="div_fl-label" class='dfl weapon' title='Divine Frame Launcher' data-value='2113-4667' data-name='Divine Frame Launcher' data-icon='dfl'></label>
 
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='div_fl_b' data-name='Divine Frame Launcher [Rare B]' value='2482-5465' data-icon='dfl'/>
-        <label for='div_fl_b'  class='dfl weapon' title='Divine Frame Launcher [Rare B]'></label>
+            <label for='div_fl_b' id="div_fl_b-label" class='dfl weapon' title='Divine Frame Launcher [Rare B]' data-value='2482-5465' data-name='Divine Frame Launcher [Rare B]' data-icon='dfl'></label>
+        </div>
+        <div class="lance">
+            <label for='hora_spear' id='hora_spear-label' class='hora_spear weapon' title='Hora Spear' data-value='1484-2280' data-name='Hora Spear' data-icon='hora_spear'></label>
+
+            <label for='hora_spear_b' id='hora_spear_b-label' class='hora_spear weapon' title='Intense Hora Spear' data-value='1960-2980' data-name='Intense Hora Spear' data-icon='hora_spear'></label>
+
+            <label for='black_lance' id='black_lance-label' class='black_lance weapon' title='Black Lance' data-value='1960-2980' data-name='Black Lance' data-icon='black_lance'></label>
+
+            <label for='black_lance_b' id='black_lance_b-label' class='black_lance weapon' title='Intense Black Lance' data-value='2036-4408' data-name='Intense Black Lance' data-icon='black_lance'></label>
+
+            <label for='divine_lance' id='divine_lance-label' class='black_lance weapon' title='Divine Lance' data-value='2587-3874' data-name='Divine Lance' data-icon='black_lance'></label>
+
+            <label for='divine_lance_b' id='divine_lance_b-label' class='black_lance weapon' title='Divine Lance [Rare B]' data-value='2036-4408' data-name='Divine Lance [Rare B]' data-icon='black_lance'></label>
+        </div>
     </div>
-    <div class="lance">
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='hora_spear' data-name='Hora Spear' value='1484-2280' data-icon='hora_spear'/>
-        <label for='hora_spear'  class='hora_spear weapon' title='Hora Spear'></label>
-
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='hora_spear_b' data-name='Intense Hora Spear' value='1960-2980' data-icon='hora_spear'/>
-        <label for='hora_spear_b'  class='hora_spear weapon' title='Intense Hora Spear'></label>
-
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='black_lance' data-name='Black Lance' value='1960-2980' data-icon='black_lance'/>
-        <label for='black_lance'  class='black_lance weapon' title='Black Lance'></label>
-
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='black_lance_b' data-name='Intense Black Lance' value='2036-4408' data-icon='black_lance'/>
-        <label for='black_lance_b'  class='black_lance weapon' title='Intense Black Lance'></label>
-
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='divine_lance' data-name='Divine Lance' value='2587-3874' data-icon='black_lance'/>
-        <label for='divine_lance'  class='black_lance weapon' title='Divine Lance'></label>
-
-        <input type='radio' class='weapon_input hidden_input' name='weapon' id='divine_lance_b' data-name='Divine Lance [Rare B]' value='2036-4408' data-icon='black_lance'/>
-        <label for='divine_lance_b'  class='black_lance weapon' title='Divine Lance [Rare B]'></label>
-    </div>
+    <div id="weapon_input_container" class="container"></div>
 {% endblock %}
 
 {% block bottom_container %}
@@ -164,6 +128,9 @@
         <label for='od70'  class='od70 buff' title='Roast Sweet Potato'></label>
     </div>
     <div class="siege_container">
+        <input type='checkbox' class='buff_input hidden_input' id='white_siege' name='buff[white_siege]' value='35'/>
+        <label for='white_siege'  class='white_siege buff' title='Advanced Siege Kit'></label>
+
         <input type='checkbox' class='buff_input hidden_input' id='red_siege_1' name='buff[red_siege_1]' value='40'/>
         <label for='red_siege_1'  class='red_siege buff' title='Attack Ephocal Siege Kit'></label>
 
@@ -179,12 +146,75 @@
         <input type='checkbox' class='buff_input hidden_input' id='black_siege_2' name='buff[black_siege_2]' value='40'/>
         <label for='black_siege_2'  class='black_siege buff' title='Advanced Shining Siege Kit'></label>
     </div>
+    <div class="charm_container">
+        <input type='checkbox' class='buff_input hidden_input' id='burst_gen_1' name='buff[burst_gen_1]' value='4'/>
+        <label for='burst_gen_1'  class='burst_gen buff' title='Burst Generator'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='burst_gen_2' name='buff[burst_gen_2]' value='4'/>
+        <label for='burst_gen_2'  class='burst_gen buff' title='Burst Generator'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='burst_gen_3' name='buff[burst_gen_3]' value='4'/>
+        <label for='burst_gen_3'  class='burst_gen buff' title='Burst Generator'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='burst_gen_4' name='buff[burst_gen_4]' value='4'/>
+        <label for='burst_gen_4'  class='burst_gen buff' title='Burst Generator'></label>
+
+        <input type='checkbox' class='buff_input hidden_input' id='burst_gen_5' name='buff[burst_gen_5]' value='4'/>
+        <label for='burst_gen_5'  class='burst_gen buff' title='Burst Generator'></label>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
     <script type='text/javascript'>
         $(function() {
+            var createInputElements = function(input, elemType, inputType) {
+                var trunc = input.id.replace('-label', '');
+                var $newElem = $('<input/>', {
+                    type: inputType,
+                    "class": elemType + '_input hidden_input',
+                    id: trunc,
+                    name: inputType == 'checkbox' ? 'buff[' + trunc + ']' : elemType,
+                    value: $(input).data('value')
+                });
+                $newElem.data('icon', $(input).data('icon')).data('name', $(input).data('name'));
+                $newElem.appendTo('#' + elemType + '_input_container');
+            }
+
+            var createButtonElement = function(elemType, listName) {
+                var $newElem = $('<button/>', {
+                    type: 'button',
+                    id: 'show_' + elemType,
+                    html: listName
+                });
+                $newElem.appendTo('#' + elemType + '_input_container');
+            }
+
+            var resetElement = function(id) {
+                var elem = $('#' + id);
+                elem.removeClass().addClass('none');
+                elem.removeAttr('title');
+                elem.removeData('value');
+            }
+
+            /** initialize amulet input and button */
+            $('#amu_container').find('.amu').each(function(k, v) {
+                createInputElements(v, 'amu', 'checkbox');
+            });
+            createButtonElement('amu', 'Amulet List');
+
+            /** initialize ring input and button */
+            $('#ring_container').find('.ring').each(function(k, v) {
+                createInputElements(v, 'ring', 'checkbox');
+            });
+            createButtonElement('ring', 'Ring List');
+
+            /** initialize weapon input and button */
+            $('#weapon_container').find('.weapon').each(function(k, v) {
+                createInputElements(v, 'weapon', 'radio');
+            });
+            createButtonElement('weapon', 'Weapon List');
+
             var trigger = function() {
                 $.ajax({
                     type: 'get',
@@ -199,17 +229,19 @@
             };
             var resetInfo = function() {
                 $('#result_name').text('-');
-                $('#result_image').removeClass().addClass('none');
                 $('#result_buff').text('0');
-                $('.amu_input').filter(':checked').prop('checked', false);
-                $('#amu_l').removeClass().addClass('none');
-                $('#amu_r').removeClass().addClass('none');
-                $('.ring_input').filter(':checked').prop('checked', false);
-                $('#ring_l').removeClass().addClass('none');
-                $('#ring_r').removeClass().addClass('none');
-                $('.weapon_input').filter(':checked').prop('checked', false);
+
+                $('.ring_input').filter(':checked').prop('checked', false).trigger('change');
+                $('.amu_input').filter(':checked').prop('checked', false).trigger('change');
+                $('.weapon_input').filter(':checked').prop('checked', false).trigger('change');
                 $('.upgrade_input').filter(':checked').prop('checked', false);
-                $('.buff_input').filter(':checked').prop('checked', false);
+                $('.buff_input').filter(':checked').prop('checked', false).trigger('change');
+
+                resetElement('result_image');
+                resetElement('amu_l');
+                resetElement('amu_r');
+                resetElement('ring_l');
+                resetElement('ring_r');
             }
 
             var elementalLogic = function(arr, input) {
@@ -225,7 +257,7 @@
                         return;
                     }
                 }
-                $('#' + arr[0].id.replace('-label', '')).prop('checked', false);
+                $('#' + arr[0].id.replace('-label', '')).prop('checked', false).trigger('change');
                 arr[0] = input;
                 $('#' + arr[0].id.replace('-label', '')).prop('checked', true).trigger('change');
             };
@@ -242,17 +274,21 @@
                     if(v) {
                         if(k == 0) {
                             $('#amu_l').removeClass().addClass('amu ' + $(v).data('icon'));
+                            $('#amu_l').attr('title', $(v).data('name'));
+                            $('#amu_l').data('value', $(v).data('value'));
                         }
                         else if(k == 1) {
                             $('#amu_r').removeClass().addClass('amu ' + $(v).data('icon'));
+                            $('#amu_r').attr('title', $(v).data('name'));
+                            $('#amu_r').data('value', $(v).data('value'));
                         }
                     }
                     else {
                         if(k == 0) {
-                            $('#amu_l').removeClass().addClass('none');
+                            resetElement('amu_l');
                         }
                         else if(k == 1) {
-                            $('#amu_r').removeClass().addClass('none');
+                            resetElement('amu_r');
                         }
                     }
                 });
@@ -269,26 +305,30 @@
                     if(v) {
                         if(k == 0) {
                             $('#ring_l').removeClass().addClass('ring ' + $(v).data('icon'));
+                            $('#ring_l').attr('title', $(v).data('name'));
+                            $('#ring_l').data('value', $(v).data('value'));
                         }
                         else if(k == 1) {
                             $('#ring_r').removeClass().addClass('ring ' + $(v).data('icon'));
+                            $('#ring_r').attr('title', $(v).data('name'));
+                            $('#ring_r').data('value', $(v).data('value'));
                         }
                     }
                     else {
                         if(k == 0) {
-                            $('#ring_l').removeClass().addClass('none');
+                            resetElement('ring_l');
                         }
                         else if(k == 1) {
-                            $('#ring_r').removeClass().addClass('none');
+                            resetElement('ring_r');
                         }
                     }
                 });
             });
 
-            $( "#amu_container, #ring_container" ).dialog({
+            $( "#amu_container, #ring_container, #weapon_container").dialog({
                 autoOpen: false,
                 height: 300,
-                width: 400,
+                width: 450,
                 modal: true
             });
             $( "#show_amu" ).button().on('click', function() {
@@ -297,17 +337,34 @@
             $( "#show_ring" ).button().on('click', function() {
                 $( "#ring_container" ).dialog( "open" );
             });
+            $( "#show_weapon" ).button().on('click', function() {
+                $( "#weapon_container" ).dialog( "open" );
+            });
 
+            var toggleRadio = function(cssClass) {
+                $('.' + cssClass).each(function(k, v) {
+                    if($(v).is(':checked')) {
+                        $('#' + v.id + '-label').addClass('highlight');
+                    }
+                    else {
+                        $('#' + v.id + '-label').removeClass('highlight');
+                    }
+                });
+            }
             $('.weapon_input').on('change', function() {
                 $('#result_name').text($(this).data('name'));
                 $('#result_image').removeClass().addClass('weapon ' + $(this).data('icon'));
+                $('#result_image').attr('title', $(this).data('name'));
+                $('#result_image').data('value', $(this).val());
                 trigger();
+                toggleRadio('weapon_input');
             });
             $('.upgrade_input').on('change', function() {
                 trigger();
             });
             $('.buff_input').on('change', function() {
                 trigger();
+                $(this).next().toggleClass('highlight');
             });
 
             $('.reset').on('click', function() {
@@ -320,11 +377,11 @@
                     if ($(this).hasClass('buff')) {
                         result += '<div>Damage: ' + $(this).prev().val() + '%</div>';
                     }
-                    if ($(this).hasClass('amu')) {
-                        result += '<div>Damage: ' + $('#' + this.id.replace('-label', '')).val() + '%</div>';
+                    else if ($(this).hasClass('amu') || $(this).hasClass('ring')) {
+                        result += '<div>Damage: ' + $(this).data('value') + '%</div>';
                     }
                     else if ($(this).hasClass('weapon')) {
-                        result += '<div>Damage: ' + $(this).prev().val() + '</div>';
+                        result += '<div>Damage: ' + $(this).data('value') + '</div>';
                     }
                     return result;
                 }

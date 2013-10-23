@@ -86,6 +86,10 @@
             <label for='div_fl' id="div_fl-label" class='dfl weapon' title='Divine Frame Launcher' data-value='2113-4667' data-name='Divine Frame Launcher' data-icon='dfl'></label>
 
             <label for='div_fl_b' id="div_fl_b-label" class='dfl weapon' title='Divine Frame Launcher [Rare B]' data-value='2482-5465' data-name='Divine Frame Launcher [Rare B]' data-icon='dfl'></label>
+
+            <label for='saint_fl' id="saint_fl-label" class='dfl weapon' title='Saint Frame Launcher' data-value='2725-6114' data-name='Saint Frame Launcher' data-icon='dfl'></label>
+
+            <label for='saint_fl_b' id="saint_fl_b-label" class='dfl weapon' title='Saint Frame Launcher [Rare B]' data-value='3030-6777' data-name='Saint Frame Launcher [Rare B]' data-icon='dfl'></label>
         </div>
         <div class="lance">
             <label for='hora_spear' id='hora_spear-label' class='hora_spear weapon' title='Hora Spear' data-value='1484-2280' data-name='Hora Spear' data-icon='hora_spear'></label>
@@ -94,14 +98,28 @@
 
             <label for='black_lance' id='black_lance-label' class='black_lance weapon' title='Black Lance' data-value='1960-2980' data-name='Black Lance' data-icon='black_lance'></label>
 
-            <label for='black_lance_b' id='black_lance_b-label' class='black_lance weapon' title='Intense Black Lance' data-value='2036-4408' data-name='Intense Black Lance' data-icon='black_lance'></label>
+            <label for='black_lance_b' id='black_lance_b-label' class='black_lance weapon' title='Intense Black Lance' data-value='2434-3680' data-name='Intense Black Lance' data-icon='black_lance'></label>
 
             <label for='divine_lance' id='divine_lance-label' class='black_lance weapon' title='Divine Lance' data-value='2587-3874' data-name='Divine Lance' data-icon='black_lance'></label>
 
-            <label for='divine_lance_b' id='divine_lance_b-label' class='black_lance weapon' title='Divine Lance [Rare B]' data-value='2036-4408' data-name='Divine Lance [Rare B]' data-icon='black_lance'></label>
+            <label for='divine_lance_b' id='divine_lance_b-label' class='black_lance weapon' title='Divine Lance [Rare B]' data-value='3019-4563' data-name='Divine Lance [Rare B]' data-icon='black_lance'></label>
+
+            <label for='saint_lance' id='saint_lance-label' class='black_lance weapon' title='Saint Lance' data-value='3415-5036' data-name='Saint Lance' data-icon='black_lance'></label>
+
+            <label for='saint_lance_b' id='saint_lance_b-label' class='black_lance weapon' title='Saint Lance [Rare B]' data-value='3743-5657' data-name='Saint Lance [Rare B]' data-icon='black_lance'></label>
         </div>
     </div>
+
+    <div id="armor_container" title="Armor List">
+        <label for='head_c' id='head_c-label'  class='head_c armor' title='Kepala Tipe C' data-name='Kepala Tipe C' data-icon="head_c" data-value='2'></label>
+        <label for='core_c' id='core_c-label'  class='core_c armor' title='Baju Tipe C' data-name='Baju Tipe C' data-icon="core_c" data-value='2'></label>
+        <label for='hand_c' id='hand_c-label'  class='hand_c armor' title='Tangan Tipe C' data-name='Tangan Tipe C' data-icon="hand_c" data-value='2'></label>
+        <label for='leg_c' id='leg_c-label'  class='leg_c armor' title='Celana Tipe C' data-name='Celana Tipe C' data-icon="leg_c" data-value='2'></label>
+        <label for='shoes_c' id='shoes_c-label'  class='shoes_c armor' title='Kaki Tipe C' data-name='Kaki Tipe C' data-icon="shoes_c" data-value='2'></label>
+    </div>
+
     <div id="weapon_input_container" class="container"></div>
+    <div id="armor_input_container" class="container"></div>
 {% endblock %}
 
 {% block bottom_container %}
@@ -215,6 +233,13 @@
             });
             createButtonElement('weapon', 'Weapon List');
 
+            /** initialize armor input and button */
+            $('#armor_container').find('.armor').each(function(k, v) {
+                createInputElements(v, 'armor', 'checkbox');
+            });
+            createButtonElement('armor', 'Armor List');
+
+            /** ajax */
             var trigger = function() {
                 $.ajax({
                     type: 'get',
@@ -227,6 +252,8 @@
                     }
                 });
             };
+
+            /** reset all fields */
             var resetInfo = function() {
                 $('#result_name').text('-');
                 $('#result_buff').text('0');
@@ -234,6 +261,7 @@
                 $('.ring_input').filter(':checked').prop('checked', false).trigger('change');
                 $('.amu_input').filter(':checked').prop('checked', false).trigger('change');
                 $('.weapon_input').filter(':checked').prop('checked', false).trigger('change');
+                $('.armor_input').filter(':checked').prop('checked', false).trigger('change');
                 $('.upgrade_input').filter(':checked').prop('checked', false);
                 $('.buff_input').filter(':checked').prop('checked', false).trigger('change');
 
@@ -244,6 +272,12 @@
                 resetElement('ring_r');
             }
 
+            $('.reset').on('click', function() {
+                resetInfo();
+                trigger();
+            });
+
+            /** elemental */
             var elementalLogic = function(arr, input) {
                 for(var i = 0; i < arr.length; i++) {
                     if(arr[i] && arr[i] == input) {
@@ -262,6 +296,7 @@
                 $('#' + arr[0].id.replace('-label', '')).prop('checked', true).trigger('change');
             };
 
+            /** amulet */
             var amuletArray = new Array(2);
             $('.amu').on('click', function() {
                 elementalLogic(amuletArray, this);
@@ -294,6 +329,7 @@
                 });
             });
 
+            /** ring */
             var ringArray = new Array(2);
             $('.ring').on('click', function() {
                 elementalLogic(ringArray, this);
@@ -325,7 +361,84 @@
                 });
             });
 
-            $( "#amu_container, #ring_container, #weapon_container").dialog({
+            var toggleRadio = function(cssClass) {
+                $('.' + cssClass).each(function(k, v) {
+                    if($(v).is(':checked')) {
+                        $('#' + v.id + '-label').addClass('highlight');
+                    }
+                    else {
+                        $('#' + v.id + '-label').removeClass('highlight');
+                    }
+                });
+            }
+            /** weapon */
+            $('.weapon_input').on('change', function() {
+                $('#result_name').text($(this).data('name'));
+                $('#result_image').removeClass().addClass('weapon ' + $(this).data('icon'));
+                $('#result_image').attr('title', $(this).data('name'));
+                $('#result_image').data('value', $(this).val());
+                trigger();
+                toggleRadio('weapon_input');
+            });
+
+            var armorLogic = function(arr, input) {
+                for(var i = 0; i < arr.length; i++) {
+                    if(arr[i] && arr[i] == input) {
+                        arr[i] = undefined;
+                        $('#' + input.id.replace('-label', '')).prop('checked', false).trigger('change');
+                        return;
+                    }
+                    else if(!arr[i]) {
+                        arr[i] = input;
+                        $('#' + input.id.replace('-label', '')).prop('checked', true).trigger('change');
+                        return;
+                    }
+                }
+                $('#' + arr[0].id.replace('-label', '')).prop('checked', false).trigger('change');
+                arr[0] = input;
+                $('#' + arr[0].id.replace('-label', '')).prop('checked', true).trigger('change');
+            }
+            var armorArray = new Array(5);
+            $('.armor').on('click', function() {
+                armorLogic(armorArray, this);
+            })
+            $('.armor_input').on('change', function() {
+                $('#' + this.id + '-label').toggleClass('highlight');
+                trigger();
+                $.each(ringArray, function(k, v) {
+                    if(v) {
+                        if(k == 0) {
+                            $('#ring_l').removeClass().addClass('ring ' + $(v).data('icon'));
+                            $('#ring_l').attr('title', $(v).data('name'));
+                            $('#ring_l').data('value', $(v).data('value'));
+                        }
+                        else if(k == 1) {
+                            $('#ring_r').removeClass().addClass('ring ' + $(v).data('icon'));
+                            $('#ring_r').attr('title', $(v).data('name'));
+                            $('#ring_r').data('value', $(v).data('value'));
+                        }
+                    }
+                    else {
+                        if(k == 0) {
+                            resetElement('ring_l');
+                        }
+                        else if(k == 1) {
+                            resetElement('ring_r');
+                        }
+                    }
+                });
+            });
+
+            $('.upgrade_input').on('change', function() {
+                trigger();
+            });
+            $('.buff_input').on('change', function() {
+                trigger();
+                $(this).next().toggleClass('highlight');
+            });
+
+            /** dialog box */
+            $( "#amu_container, #ring_container, #weapon_container, #armor_container").dialog({
                 autoOpen: false,
                 height: 300,
                 width: 450,
@@ -340,37 +453,10 @@
             $( "#show_weapon" ).button().on('click', function() {
                 $( "#weapon_container" ).dialog( "open" );
             });
-
-            var toggleRadio = function(cssClass) {
-                $('.' + cssClass).each(function(k, v) {
-                    if($(v).is(':checked')) {
-                        $('#' + v.id + '-label').addClass('highlight');
-                    }
-                    else {
-                        $('#' + v.id + '-label').removeClass('highlight');
-                    }
-                });
-            }
-            $('.weapon_input').on('change', function() {
-                $('#result_name').text($(this).data('name'));
-                $('#result_image').removeClass().addClass('weapon ' + $(this).data('icon'));
-                $('#result_image').attr('title', $(this).data('name'));
-                $('#result_image').data('value', $(this).val());
-                trigger();
-                toggleRadio('weapon_input');
-            });
-            $('.upgrade_input').on('change', function() {
-                trigger();
-            });
-            $('.buff_input').on('change', function() {
-                trigger();
-                $(this).next().toggleClass('highlight');
+            $( "#show_armor" ).button().on('click', function() {
+                $( "#armor_container" ).dialog( "open" );
             });
 
-            $('.reset').on('click', function() {
-                resetInfo();
-                trigger();
-            });
             $( document ).tooltip({
                 content: function() {
                     var result = '<div>' + $(this).attr('title') + '</div>';
